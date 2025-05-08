@@ -1,19 +1,23 @@
 [package]
-name = "hyper-catalan-rs"
+name = "hyper_catalan_rs"
 version = "0.1.0"
 edition = "2021"
+description = "A Rust implementation of the Hyper-Catalan series method for solving polynomial equations"
 authors = ["Eugen Soloviov <suenot@gmail.com>"]
-description = "Rust implementation of Hyper-Catalan series method for solving polynomial equations"
+license = "MIT"
+repository = "https://github.com/suenot/hyper-catalan-rs"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-num = "0.4.0"           # For arbitrary precision arithmetic
-num-traits = "0.2.15"   # For numeric traits
-num-bigint = "0.4.3"    # For big integer support
-num-rational = "0.4.1"  # For rational number support
-nalgebra = "0.32.2"     # For linear algebra (alternative to Eigen)
+num = "0.4"
+nalgebra = "0.32"
 clap = { version = "4.3.0", features = ["derive"] } # For command line argument parsing
 
 [dev-dependencies]
-approx = "0.5.1"        # For floating-point comparisons in tests
+approx = "0.5"
+criterion = "0.5"
+
+[[bench]]
+name = "benchmark"
+harness = false
